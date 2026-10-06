@@ -81,6 +81,15 @@ export default function TimelineSection() {
           ))}
         </ol>
       </div>
+
+      <div className="mt-12 text-center text-sm leading-relaxed text-[#C5A059]">
+        <p className="italic">
+          The ceremony will commence on time. Your punctuality will be highly appreciated.
+        </p>
+        <p lang="ur" dir="rtl" className="mt-2 font-urdu">
+          تقریب کا آغاز مقررہ وقت پر ہوگا۔ آپ کی وقت کی پابندی باعثِ مسرت ہوگی۔
+        </p>
+      </div>
     </section>
   )
 }

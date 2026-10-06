@@ -5,7 +5,7 @@
  */
 export const EVENT = {
   honoree: 'Javeria Bilal',
-  hosts: 'Mr. & Mrs. Ashfaq',
+  hosts: 'Mr. & Mrs. Muhammad Ashfaq Saigal',
   lineage: 'D/O Bilal Ashfaq Saigal',
   title: 'Takmeel-e-Hifz-ul-Quran — Javeria Bilal',
   start: new Date('2026-10-11T14:00:00+05:00'),
@@ -21,8 +21,6 @@ export const EVENT = {
 
 export const TIMELINE = [
   { time: '2:00 PM', title: 'Guest Arrival', urdu: 'استقبالِ مہمانان' },
-  { time: '2:30 PM', title: 'Tilawat-e-Quran', urdu: 'تلاوتِ قرآنِ پاک' },
-  { time: '2:45 PM', title: 'Takmeel-e-Hifz Ceremony', urdu: 'تقریبِ تکمیلِ حفظ' },
-  { time: '3:00 PM', title: 'Short Bayan', urdu: 'مختصر بیان' },
-  { time: '3:30 PM', title: 'Lunch', urdu: 'دعوتِ طعام' },
+  { time: '2:35 PM', title: 'Short Bayan', urdu: 'مختصر بیان' },
+  { time: '3:05 PM', title: 'Lunch', urdu: 'دعوتِ طعام' },
 ]
