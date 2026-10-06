@@ -54,9 +54,9 @@ export default function App() {
           <AyahSection revealed={phase !== 'closed'} />
           <InvitationSection />
           <CountdownSection />
+          <VenueSection />
           <TimelineSection />
           <DressCodeSection />
-          <VenueSection />
         </main>
         <ClosingSection />
       </div>
