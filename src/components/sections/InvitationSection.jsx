@@ -39,7 +39,7 @@ export default function InvitationSection() {
             To the <span className="whitespace-nowrap">Takmeel-e-Hifz-ul-Quran</span> of
           </Reveal>
           <Reveal as="p" delay={0.36} className={SMALL_LINE}>
-            Their beloved granddaughter
+            Their beloved grand-daughter
           </Reveal>
         </div>
 
@@ -64,6 +64,14 @@ export default function InvitationSection() {
 
         <Reveal delay={0.7}>
           <Divider className="mt-12 text-gold" />
+        </Reveal>
+
+        {/* Welcome Text */}
+        <Reveal delay={0.8}>
+          <div className="mt-10 pl-[0.1em] text-center font-display uppercase leading-relaxed tracking-widest">
+            <p className="text-xs text-gold-deep">Awaiting to welcome</p>
+            <p className="text-sm text-emerald-ink">All family members</p>
+          </div>
         </Reveal>
       </div>
     </section>

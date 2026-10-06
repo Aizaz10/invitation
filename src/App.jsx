@@ -8,6 +8,7 @@ import DressCodeSection from './components/sections/DressCodeSection'
 import InvitationSection from './components/sections/InvitationSection'
 import TimelineSection from './components/sections/TimelineSection'
 import VenueSection from './components/sections/VenueSection'
+import ScrollProgress from './components/ui/ScrollProgress'
 import { COVER_TOTAL_MS } from './utils/motion'
 
 /** closed → opening (doors parting) → open (cover removed from the DOM) */
@@ -38,6 +39,8 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
+      <ScrollProgress />
+
       {phase !== 'open' && (
         <Cover
           opening={phase === 'opening'}
