@@ -64,7 +64,7 @@ export default function TimelineSection() {
     <section
       id="programme"
       aria-labelledby="programme-title"
-      className="relative px-6 py-32 sm:py-40"
+      className="relative px-6 py-20 sm:py-28"
     >
       <SectionHeading id="programme-title" eyebrow="Order of the Day" title="Programme" />
 

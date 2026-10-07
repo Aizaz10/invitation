@@ -14,7 +14,7 @@ export default function InvitationSection() {
     <section
       id="invitation"
       aria-labelledby="invitation-title"
-      className="relative bg-ivory-deep/60 px-6 py-32 text-center sm:py-40"
+      className="relative bg-ivory-deep/60 px-6 pt-8 pb-20 text-center sm:pt-12 sm:pb-28"
     >
       <div className="mx-auto max-w-2xl">
         <Reveal>

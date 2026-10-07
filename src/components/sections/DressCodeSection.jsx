@@ -24,17 +24,17 @@ export default function DressCodeSection() {
     <section
       id="dress-code"
       aria-labelledby="dress-code-title"
-      className="relative bg-ivory-deep px-6 py-32 sm:py-40"
+      className="relative bg-ivory-deep px-6 py-20 sm:py-28"
     >
       <SectionHeading id="dress-code-title" eyebrow="Attire" title="Dress Code" />
 
       <div className="mx-auto grid max-w-4xl items-center gap-10 md:grid-cols-[1fr_auto_1fr] md:gap-14">
-        <AttireCard label="MEN" text="Modest & Traditional Attire" />
+        <AttireCard label="MEN" text="Dark Colors" />
         <Reveal delay={0.1}>
           <Divider className="text-gold md:hidden" />
           <VerticalDivider className="hidden text-gold md:flex" />
         </Reveal>
-        <AttireCard label="WOMEN" text="Modest & Traditional Attire" delay={0.15} />
+        <AttireCard label="WOMEN" text="Pastel Colors" delay={0.15} />
       </div>
     </section>
   )

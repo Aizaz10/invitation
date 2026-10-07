@@ -7,7 +7,7 @@ export default function AyahSection({ revealed }) {
     <section
       id="ayah"
       aria-label="Quranic verse"
-      className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 py-32 sm:py-40"
+      className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 pt-12 pb-8 sm:pt-16 sm:pb-12"
     >
       <FrameCorners className="inset-4 text-gold/60 sm:inset-8" />
       <div
@@ -15,7 +15,7 @@ export default function AyahSection({ revealed }) {
         className="pointer-events-none absolute left-1/2 top-1/2 size-[min(120vw,52rem)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgb(197_160_89/0.12),transparent_65%)]"
       />
 
-      <div className="relative mx-auto max-w-3xl text-center">
+      <div className="relative mx-auto max-w-3xl text-center -mt-16 sm:-mt-24">
         <Reveal show={revealed} delay={0.9}>
           <Star8 className="mx-auto size-7 text-gold" />
         </Reveal>
@@ -58,7 +58,7 @@ export default function AyahSection({ revealed }) {
 
       <motion.div
         aria-hidden="true"
-        className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 text-gold-deep"
+        className="absolute bottom-2 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3 text-gold-deep"
         initial={{ opacity: 0 }}
         animate={{ opacity: revealed ? 1 : 0 }}
         transition={{ delay: 2.2, duration: 1 }}

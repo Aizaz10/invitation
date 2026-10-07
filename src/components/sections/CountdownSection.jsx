@@ -18,7 +18,7 @@ const UNITS = [
 function TimeTile({ value, label }) {
   const display = String(value).padStart(2, '0')
   return (
-    <div className="relative min-w-0 max-w-40 flex-1 rounded-t-full border border-gold/50 bg-white/[0.03] px-1 pb-4 pt-[45%] text-center shadow-[0_0_24px_-6px_rgb(197_160_89/0.3),inset_0_0_22px_-10px_rgb(197_160_89/0.35)] transition-[border-color,box-shadow] duration-500 hover:border-gold/80 hover:shadow-[0_0_32px_-4px_rgb(197_160_89/0.4),inset_0_0_22px_-8px_rgb(197_160_89/0.45)] sm:pb-6">
+    <div className="relative min-w-0 max-w-40 flex-1 rounded-t-full border border-gold/50 bg-white/[0.03] px-1 pb-4 pt-8 text-center shadow-[0_0_24px_-6px_rgb(197_160_89/0.3),inset_0_0_22px_-10px_rgb(197_160_89/0.35)] transition-[border-color,box-shadow] duration-500 hover:border-gold/80 hover:shadow-[0_0_32px_-4px_rgb(197_160_89/0.4),inset_0_0_22px_-8px_rgb(197_160_89/0.45)] sm:pb-6 sm:pt-12">
       <div aria-hidden="true" className="absolute inset-1.5 rounded-t-full border border-gold/10" />
       <div className="relative h-[1.2em] overflow-hidden font-display text-[clamp(1.6rem,7vw,3.25rem)] leading-[1.2] text-gold-light tabular-nums">
         <AnimatePresence mode="popLayout" initial={false}>
@@ -49,7 +49,7 @@ export default function CountdownSection() {
     <section
       id="countdown"
       aria-labelledby="countdown-title"
-      className="relative overflow-hidden bg-emerald-ink px-5 py-32 text-ivory sm:px-6 sm:py-40"
+      className="relative overflow-hidden bg-emerald-ink px-5 py-20 text-ivory sm:px-6 sm:py-28"
     >
       <div aria-hidden="true" className="bg-door absolute inset-0" />
       <div aria-hidden="true" className="bg-geometric mask-frame absolute inset-0 opacity-15" />

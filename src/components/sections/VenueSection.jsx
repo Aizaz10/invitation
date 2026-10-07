@@ -6,7 +6,7 @@ import { Divider, FrameCorners } from '../ui/Ornaments'
 
 export default function VenueSection() {
   return (
-    <section id="venue" aria-labelledby="venue-title" className="relative px-5 py-32 sm:px-6 sm:py-40">
+    <section id="venue" aria-labelledby="venue-title" className="relative px-5 py-20 sm:px-6 sm:py-28">
       <Reveal className="relative mx-auto max-w-2xl border border-gold/40 p-2 sm:p-3">
         <div className="relative border border-gold/20 bg-white/55 px-5 py-14 text-center sm:px-14 sm:py-16">
           <FrameCorners className="inset-3 text-gold/70" />

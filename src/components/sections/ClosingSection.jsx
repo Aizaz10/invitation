@@ -10,7 +10,7 @@ export default function ClosingSection() {
       <section
         id="closing"
         aria-label="Closing dua"
-        className="relative mx-auto max-w-2xl px-6 pt-32 text-center sm:pt-40"
+        className="relative mx-auto max-w-2xl px-6 pt-20 text-center sm:pt-28"
       >
         <Reveal>
           <Star8 className="mx-auto size-7 animate-spin-slow text-gold" />
@@ -40,7 +40,7 @@ export default function ClosingSection() {
         </Reveal>
       </section>
 
-      <footer className="relative px-6 pb-12 pt-24 sm:pt-32">
+      <footer className="relative px-6 pb-12 pt-16 sm:pt-24">
         <Reveal y={12}>
           <Flourish className="mx-auto w-64 text-gold/70 sm:w-80" />
         </Reveal>

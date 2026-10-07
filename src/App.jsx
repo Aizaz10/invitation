@@ -37,6 +37,44 @@ export default function App() {
     return () => clearTimeout(id)
   }, [phase])
 
+  // Gentle auto-scroll feature
+  useEffect(() => {
+    // Wait until the cover is completely open before starting the logic.
+    // Otherwise, the user clicking to open the cover would immediately cancel the scroll!
+    if (phase !== 'open') return
+
+    let scrollInterval
+    let interrupted = false
+
+    const stopAutoScroll = () => {
+      interrupted = true
+      if (scrollInterval) clearInterval(scrollInterval)
+    }
+
+    // Stop auto-scroll on user interactions
+    window.addEventListener('touchstart', stopAutoScroll, { passive: true })
+    window.addEventListener('wheel', stopAutoScroll, { passive: true })
+    window.addEventListener('mousedown', stopAutoScroll, { passive: true })
+
+    // Wait 3 seconds before starting the cinematic scroll
+    const startTimeout = setTimeout(() => {
+      if (!interrupted) {
+        scrollInterval = setInterval(() => {
+          window.scrollBy(0, 1)
+        }, 30)
+      }
+    }, 1000)
+
+    // Cleanup listeners and intervals
+    return () => {
+      clearTimeout(startTimeout)
+      if (scrollInterval) clearInterval(scrollInterval)
+      window.removeEventListener('touchstart', stopAutoScroll)
+      window.removeEventListener('wheel', stopAutoScroll)
+      window.removeEventListener('mousedown', stopAutoScroll)
+    }
+  }, [phase])
+
   return (
     <MotionConfig reducedMotion="user">
       <ScrollProgress />
@@ -59,6 +97,21 @@ export default function App() {
           <DressCodeSection />
         </main>
         <ClosingSection />
+        <footer className="w-full bg-[#f9f6f0] py-5">
+          <div className="flex flex-col items-center justify-center gap-3">
+            <p className="text-xs text-[#C5A059] tracking-widest uppercase opacity-80">
+              Designed by{' '}
+              <a 
+                href="https://wa.me/923000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 decoration-1 hover:text-emerald-ink transition-colors"
+              >
+                Aizaz Ahmed
+              </a>
+            </p>
+          </div>
+        </footer>
       </div>
     </MotionConfig>
   )
