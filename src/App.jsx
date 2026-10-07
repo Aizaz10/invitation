@@ -49,7 +49,7 @@ export default function App() {
       if (scrollIntervalRef.current) clearInterval(scrollIntervalRef.current)
       scrollIntervalRef.current = setInterval(() => {
         window.scrollBy(0, 1)
-      }, 30)
+      }, 15)
     }
 
     const handleUserInteraction = () => {

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { EVENT } from '../../data/event'
 import Reveal from '../ui/Reveal'
 import { Divider, Star8 } from '../ui/Ornaments'
@@ -10,6 +11,15 @@ const SMALL_LINE =
   'font-display text-[0.68rem] font-medium uppercase leading-relaxed tracking-[0.26em] pl-[0.26em] text-emerald-ink text-balance sm:text-sm sm:tracking-[0.4em] sm:pl-[0.4em]'
 
 export default function InvitationSection() {
+  const [guestName, setGuestName] = useState('')
+
+  useEffect(() => {
+    const name = new URLSearchParams(window.location.search).get('to')
+    if (name) {
+      setGuestName(name)
+    }
+  }, [])
+
   return (
     <section
       id="invitation"
@@ -20,6 +30,14 @@ export default function InvitationSection() {
         <Reveal>
           <Star8 className="mx-auto size-6 text-gold" />
         </Reveal>
+
+        {guestName && (
+          <Reveal delay={0.05} className="mt-8 mb-6">
+            <p className="font-serif italic text-2xl sm:text-3xl text-[#C5A059]">
+              Respected {guestName},
+            </p>
+          </Reveal>
+        )}
 
         {/* Line 1 — hosts */}
         <Reveal
