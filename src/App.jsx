@@ -102,7 +102,7 @@ export default function App() {
             <p className="text-xs text-[#C5A059] tracking-widest uppercase opacity-80">
               Designed by{' '}
               <a 
-                href="https://wa.me/923000000000"
+                href="https://wa.me/923702542641"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-4 decoration-1 hover:text-emerald-ink transition-colors"

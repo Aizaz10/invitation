@@ -6,7 +6,7 @@ function AttireCard({ label, text, delay = 0 }) {
   return (
     <Reveal delay={delay} className="mx-auto w-full max-w-[18rem]">
       <div className="group rounded-t-full border border-gold/45 p-2 transition-colors duration-500 hover:border-gold">
-        <div className="flex aspect-[4/5] flex-col items-center justify-center rounded-t-full border border-gold/20 bg-ivory/80 px-6 pt-12 text-center transition-colors duration-500 group-hover:bg-ivory">
+        <div className="flex aspect-square flex-col items-center justify-center rounded-t-full border border-gold/20 bg-ivory/80 px-6 pt-4 pb-2 text-center transition-colors duration-500 group-hover:bg-ivory">
           <Star8 className="size-5 text-gold transition-transform duration-700 ease-silk group-hover:rotate-45" />
           <h3 className="mt-5 font-display text-sm font-medium tracking-[0.45em] text-gold-deep">
             {label}
