@@ -1,5 +1,5 @@
 import { MotionConfig } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Cover from './components/Cover'
 import AyahSection from './components/sections/AyahSection'
 import ClosingSection from './components/sections/ClosingSection'
@@ -14,6 +14,8 @@ import { COVER_TOTAL_MS } from './utils/motion'
 /** closed → opening (doors parting) → open (cover removed from the DOM) */
 export default function App() {
   const [phase, setPhase] = useState('closed')
+  const scrollIntervalRef = useRef(null)
+  const resumeTimeoutRef = useRef(null)
 
   // Always start at the top, behind the cover
   useEffect(() => {
@@ -43,35 +45,45 @@ export default function App() {
     // Otherwise, the user clicking to open the cover would immediately cancel the scroll!
     if (phase !== 'open') return
 
-    let scrollInterval
-    let interrupted = false
-
-    const stopAutoScroll = () => {
-      interrupted = true
-      if (scrollInterval) clearInterval(scrollInterval)
+    const startAutoScroll = () => {
+      if (scrollIntervalRef.current) clearInterval(scrollIntervalRef.current)
+      scrollIntervalRef.current = setInterval(() => {
+        window.scrollBy(0, 1)
+      }, 30)
     }
 
-    // Stop auto-scroll on user interactions
-    window.addEventListener('touchstart', stopAutoScroll, { passive: true })
-    window.addEventListener('wheel', stopAutoScroll, { passive: true })
-    window.addEventListener('mousedown', stopAutoScroll, { passive: true })
-
-    // Wait 3 seconds before starting the cinematic scroll
-    const startTimeout = setTimeout(() => {
-      if (!interrupted) {
-        scrollInterval = setInterval(() => {
-          window.scrollBy(0, 1)
-        }, 30)
+    const handleUserInteraction = () => {
+      if (scrollIntervalRef.current) {
+        clearInterval(scrollIntervalRef.current)
+        scrollIntervalRef.current = null
       }
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current)
+      }
+      resumeTimeoutRef.current = setTimeout(() => {
+        startAutoScroll()
+      }, 4000)
+    }
+
+    // Wait 1 second before starting the cinematic scroll initially
+    resumeTimeoutRef.current = setTimeout(() => {
+      startAutoScroll()
     }, 1000)
+
+    // Stop auto-scroll on user interactions
+    window.addEventListener('touchstart', handleUserInteraction, { passive: true })
+    window.addEventListener('touchmove', handleUserInteraction, { passive: true })
+    window.addEventListener('wheel', handleUserInteraction, { passive: true })
+    window.addEventListener('mousedown', handleUserInteraction, { passive: true })
 
     // Cleanup listeners and intervals
     return () => {
-      clearTimeout(startTimeout)
-      if (scrollInterval) clearInterval(scrollInterval)
-      window.removeEventListener('touchstart', stopAutoScroll)
-      window.removeEventListener('wheel', stopAutoScroll)
-      window.removeEventListener('mousedown', stopAutoScroll)
+      if (scrollIntervalRef.current) clearInterval(scrollIntervalRef.current)
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current)
+      window.removeEventListener('touchstart', handleUserInteraction)
+      window.removeEventListener('touchmove', handleUserInteraction)
+      window.removeEventListener('wheel', handleUserInteraction)
+      window.removeEventListener('mousedown', handleUserInteraction)
     }
   }, [phase])
 

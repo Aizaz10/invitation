@@ -7,7 +7,7 @@ import { Divider, Star8 } from '../ui/Ornaments'
  * centred text to the left. A matching left padding re-balances each line.
  */
 const SMALL_LINE =
-  'font-display text-[0.68rem] font-normal uppercase leading-relaxed tracking-[0.26em] pl-[0.26em] text-emerald-ink/70 text-balance sm:text-sm sm:tracking-[0.4em] sm:pl-[0.4em]'
+  'font-display text-[0.68rem] font-medium uppercase leading-relaxed tracking-[0.26em] pl-[0.26em] text-emerald-ink text-balance sm:text-sm sm:tracking-[0.4em] sm:pl-[0.4em]'
 
 export default function InvitationSection() {
   return (
@@ -47,7 +47,7 @@ export default function InvitationSection() {
         <h1 id="invitation-title" className="mt-8 sm:mt-10">
           <Reveal as="span" delay={0.48} y={16} duration={1.3} className="block">
             {/* padding keeps script swashes inside the clipped gold-foil background */}
-            <span className="text-gold-foil animate-shimmer inline-block px-[0.2em] py-[0.08em] font-script text-6xl font-normal leading-[1.3] sm:text-7xl">
+            <span className="text-[#C5A059] inline-block px-[0.2em] py-[0.08em] font-script text-6xl font-medium leading-[1.3] sm:text-7xl">
               {EVENT.honoree}
             </span>
           </Reveal>
@@ -57,7 +57,7 @@ export default function InvitationSection() {
         <Reveal
           as="p"
           delay={0.6}
-          className="mt-5 pl-[0.35em] font-display text-[0.7rem] uppercase tracking-[0.35em] text-emerald-ink/80 sm:mt-6 sm:text-sm sm:tracking-[0.42em] sm:pl-[0.42em]"
+          className="mt-5 pl-[0.35em] font-display font-medium text-[0.7rem] uppercase tracking-[0.35em] text-emerald-ink sm:mt-6 sm:text-sm sm:tracking-[0.42em] sm:pl-[0.42em]"
         >
           {EVENT.lineage}
         </Reveal>
@@ -68,8 +68,8 @@ export default function InvitationSection() {
 
         {/* Welcome Text */}
         <Reveal delay={0.8}>
-          <div className="mt-10 pl-[0.1em] text-center font-display uppercase leading-relaxed tracking-widest">
-            <p className="text-xs text-gold-deep">Awaiting to welcome</p>
+          <div className="mt-10 pl-[0.1em] text-center font-display font-medium uppercase leading-relaxed tracking-widest">
+            <p className="text-xs text-[#C5A059]">Awaiting to welcome</p>
             <p className="text-sm text-emerald-ink">All family members</p>
           </div>
         </Reveal>
