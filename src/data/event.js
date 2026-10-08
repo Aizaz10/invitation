@@ -11,7 +11,7 @@ export const EVENT = {
   start: new Date('2026-10-11T14:00:00+05:00'),
   end: new Date('2026-10-11T17:00:00+05:00'),
   venue: 'Victoria Palace Ballroom',
-  address: 'Block 3 Nazimabad 01, Karachi',
+  address: '2nd floor above Qasr-e-Shireen, Nazimabad No. 3, Karachi Opp. Nazimabad Fire Station',
   // Placeholder — replace with the exact Google Maps share link for the venue.
   mapsUrl:
     'https://www.google.com/maps/search/?api=1&query=Victoria+Palace+Ballroom+Block+3+Nazimabad+Karachi',
